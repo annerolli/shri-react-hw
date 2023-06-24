@@ -3,4 +3,7 @@ type NavMenuItem = {
   path: string;
 };
 
-export const items: NavMenuItem[] = [{ title: 'О нас', path: '/about' }];
+export const items: NavMenuItem[] = [
+  { title: 'Вопросы-ответы', path: '/faq' },
+  { title: 'О нас', path: '/about' },
+];
