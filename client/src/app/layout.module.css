@@ -10,5 +10,6 @@
 }
 
 .layout_main {
+  padding: 24px 32px;
   flex-grow: 1;
 }
