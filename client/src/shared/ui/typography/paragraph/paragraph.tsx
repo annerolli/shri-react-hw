@@ -1,20 +1,18 @@
 import s from './paragraph.module.css';
 import clsx from 'clsx';
-import { ElementType, FC, HTMLAttributes, PropsWithChildren } from 'react';
+import { ElementType, FC } from 'react';
+import { Base, TypographyProps } from '../base';
 
-type Props = PropsWithChildren<{
-  as?: ElementType;
-}> &
-  HTMLAttributes<HTMLElement>;
+interface Props extends TypographyProps {
+  as?: Extract<ElementType, 'span' | 'div' | 'p' | 'b' | 'strong' | 'i'>;
+}
 
-export const Paragraph: FC<Props> = ({
-  as: Component = 'p',
-  children,
-  ...props
-}) => {
+export const Paragraph: FC<Props> = ({ as: Component = 'p', ...props }) => {
   return (
-    <Component {...props} className={clsx(props.className, s.paragraph)}>
-      {children}
-    </Component>
+    <Base
+      {...props}
+      as={Component}
+      className={clsx(props.className, s.paragraph)}
+    />
   );
 };
