@@ -1,8 +1,5 @@
 .footer {
   background: var(--footer_background, #333);
   color: var(--footer_foreground, #FFF);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 24px 32px;
 }
