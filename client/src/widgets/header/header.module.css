@@ -1,0 +1,8 @@
+.header {
+  background: var(--header_background, #333);
+  color: var(--header_foreground, #FFF);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+}
