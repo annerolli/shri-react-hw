@@ -1,18 +1,8 @@
 import s from './headline.module.css';
 import clsx from 'clsx';
-import { ElementType, FC } from 'react';
-import { Base, TypographyProps } from '../base';
+import { FC } from 'react';
+import { Heading, HeadingProps } from '../heading';
 
-interface Props extends TypographyProps {
-  as?: Extract<ElementType, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
-}
-
-export const Headline: FC<Props> = ({ as: Component = 'h1', ...props }) => {
-  return (
-    <Base
-      {...props}
-      as={Component}
-      className={clsx(props.className, s.headline)}
-    />
-  );
+export const Headline: FC<HeadingProps> = (props) => {
+  return <Heading {...props} className={clsx(props.className, s.headline)} />;
 };
