@@ -11,7 +11,12 @@ export type Movie = {
 
 export type MovieId = string;
 
-export type MovieGenre = 'fantasy' | 'horror' | 'action' | 'comedy';
+export enum MovieGenre {
+  FANTASY = 'fantasy',
+  HORROR = 'horror',
+  ACTION = 'action',
+  COMEDY = 'comedy',
+}
 
 export type CinemaId = string;
 
