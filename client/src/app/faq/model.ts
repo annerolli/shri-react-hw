@@ -3,7 +3,7 @@ type FaqItem = {
   answer: string;
 };
 
-export const items = [
+export const items: FaqItem[] = [
   {
     question: 'Что такое Билетопоиск?',
     answer:
