@@ -1,0 +1,19 @@
+.poster {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.poster-size-s {
+  width: 100px;
+  height: 120px;
+}
+
+.poster-size-l {
+  width: 400px;
+  height: 500px;
+}
+
+.poster_image {
+  object-fit: cover;
+  object-position: center;
+}

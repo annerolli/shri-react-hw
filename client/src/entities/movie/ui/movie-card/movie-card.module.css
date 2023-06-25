@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  gap: 24px;
+}
+
+.card_main {
+  flex-grow: 1;
+}
+
+.card_after,
+.card_before {
+  flex-shrink: 0;
+}
+
+.card_genre {
+  margin-top: 8px;
+}
