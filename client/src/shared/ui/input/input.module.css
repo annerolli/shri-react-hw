@@ -1,0 +1,22 @@
+.input {
+  background: #FFF;
+  border-radius: 8px;
+  border: 1px solid var(--input_border-default, #E1E3E6);
+  padding: 10px 16px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.input::placeholder {
+  color: var(--text-tertiary, #999FA6);
+}
+
+.input:focus-visible {
+  outline: none;
+  border: 1px solid var(--input_border-focus, #F50);
+}
