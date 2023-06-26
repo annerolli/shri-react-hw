@@ -18,6 +18,12 @@ export enum MovieGenre {
   COMEDY = 'comedy',
 }
 
+export type Cinema = {
+  id: CinemaId;
+  name: string;
+  movieIds: MovieId[];
+};
+
 export type CinemaId = string;
 
 export type GetMoviesParams = {

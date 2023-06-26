@@ -1,9 +1,9 @@
 import { API_URL } from '@/shared/config';
-import { MovieApi } from './interfaces.internal';
-import { Movie, GetMovieParams, GetMoviesParams } from './types';
+import { CinemaApi, MovieApi } from './interfaces.internal';
+import { Movie, GetMovieParams, GetMoviesParams, Cinema } from './types';
 import { CallApiMethodOptions } from './types.internal';
 
-export class Api implements MovieApi {
+export class Api implements MovieApi, CinemaApi {
   private readonly host = API_URL;
 
   getMovies(params?: GetMoviesParams) {
@@ -17,6 +17,12 @@ export class Api implements MovieApi {
     return this.callApiMethod<Movie>({
       url: 'movie',
       params,
+    });
+  }
+
+  getCinemas() {
+    return this.callApiMethod<Cinema[]>({
+      url: 'cinemas',
     });
   }
 
