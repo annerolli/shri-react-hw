@@ -1,9 +1,16 @@
 import { API_URL } from '@/shared/config';
-import { CinemaApi, MovieApi } from './interfaces.internal';
-import { Movie, GetMovieParams, GetMoviesParams, Cinema } from './types';
+import { CinemaApi, MovieApi, ReviewApi } from './interfaces.internal';
+import {
+  Movie,
+  GetMovieParams,
+  GetMoviesParams,
+  Cinema,
+  GetReviewsParams,
+  Review,
+} from './types';
 import { CallApiMethodOptions } from './types.internal';
 
-export class Api implements MovieApi, CinemaApi {
+export class Api implements MovieApi, CinemaApi, ReviewApi {
   private readonly host = API_URL;
 
   getMovies(params?: GetMoviesParams) {
@@ -26,6 +33,13 @@ export class Api implements MovieApi, CinemaApi {
     });
   }
 
+  getReviews(params: GetReviewsParams) {
+    return this.callApiMethod<Review[]>({
+      url: 'reviews',
+      params,
+    });
+  }
+
   private callApiMethod<T>({
     url,
     params,
@@ -41,6 +55,7 @@ export class Api implements MovieApi, CinemaApi {
 
     return fetch(input, {
       method,
+      next: { revalidate: 10 },
     }).then((response) => {
       if (!response.ok) {
         throw new Error('aboba');

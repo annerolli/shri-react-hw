@@ -26,10 +26,20 @@ export type Cinema = {
 
 export type CinemaId = string;
 
+export type Review = {
+  name: string;
+  text: string;
+  rating: number;
+};
+
 export type GetMoviesParams = {
   cinemaId: CinemaId;
 };
 
 export type GetMovieParams = {
+  movieId: MovieId;
+};
+
+export type GetReviewsParams = {
   movieId: MovieId;
 };

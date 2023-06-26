@@ -1,4 +1,11 @@
-import { Movie, GetMovieParams, GetMoviesParams, Cinema } from './types';
+import {
+  Movie,
+  GetMovieParams,
+  GetMoviesParams,
+  Cinema,
+  GetReviewsParams,
+  Review,
+} from './types';
 
 export interface MovieApi {
   getMovies(params: GetMoviesParams): Promise<Movie[]>;
@@ -7,4 +14,8 @@ export interface MovieApi {
 
 export interface CinemaApi {
   getCinemas(): Promise<Cinema[]>;
+}
+
+export interface ReviewApi {
+  getReviews(params: GetReviewsParams): Promise<Review[]>;
 }
