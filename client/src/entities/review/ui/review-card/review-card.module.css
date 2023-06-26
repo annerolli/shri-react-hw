@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  gap: 32px;
+}
+
+.card_before {
+  flex-shrink: 0;
+}
+
+.card_main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card_header {
+  display: flex;
+  gap: 16px;
+}
+
+.card_name {
+  flex-grow: 1;
+}
+
+.card_rating {
+  flex-shrink: 0;
+}
