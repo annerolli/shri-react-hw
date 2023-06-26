@@ -1,0 +1,38 @@
+.root {
+  background: var(--select_background);
+  border-radius: 8px;
+  border: 1px solid var(--select_border_color-secondary);
+  color: var(--select_foreground-secondary);
+  padding: 10px 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+}
+
+.root:focus-visible {
+  outline: none;
+}
+
+.root:focus,
+.root:focus-visible,
+.root-active,
+.root-selected {
+  border-color: var(--select_border_color-primary);
+  color: inherit;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.icon {
+  color: var(--select_foreground-secondary);
+  flex-shrink: 0;
+}
+
+.root-active .icon {
+  transform: rotate(180deg);
+}

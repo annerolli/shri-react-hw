@@ -1,0 +1,14 @@
+.option {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: inherit;
+  background: var(--select_background);
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: var(--select_option_background-hover);
+}

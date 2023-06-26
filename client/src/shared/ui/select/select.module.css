@@ -1,0 +1,30 @@
+.select {
+  --select_background: #FFF;
+  --select_foreground-primary: #1B1F23;
+  --select_foreground-secondary: #999FA6;
+  --select_border_color-primary: #F50;
+  --select_border_color-secondary: #E1E3E6;
+  --select_option_background-hover: rgba(0, 0, 0, .03);
+
+  color: var(--select_foreground-primary);
+  position: relative;
+}
+
+.select_options {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  width: 100%;
+  margin-top: 4px;
+  list-style-type: none;
+  border-radius: 8px;
+  border: 1px solid var(--select_border_color-secondary);
+  background: var(--select_background);
+}
+
+.select_options-visible {
+  display: block;
+}
+
+
