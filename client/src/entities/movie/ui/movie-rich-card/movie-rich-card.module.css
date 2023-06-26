@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  gap: 32px;
+}
+
+.card_before {
+  flex-shrink: 0;
+}
+
+.card_main {
+  flex-grow: 1;
+}
+
+.card_header {
+  display: flex;
+  gap: 16px;
+}
+
+.card_title {
+  flex-grow: 1;
+}
+
+.card_after {
+  flex-shrink: 0;
+}
+
+.card_meta,
+.card_description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card_meta {
+  margin-top: 24px;
+  list-style-type: none;
+}
+
+.card_description {
+  margin-top: 32px;
+}
