@@ -6,8 +6,8 @@ import { Headline } from '../typography';
 import { IconButton } from '../icon-button';
 import s from './accordion.module.css';
 import { IconDropDown } from '@/shared/icons';
-import { useAccordion } from './use-accordion';
 import clsx from 'clsx';
+import { useToggle } from '@/shared/hooks/use-toggle';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   header: ReactNode;
@@ -15,7 +15,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Accordion: FC<Props> = ({ header, children, ...props }) => {
-  const { isVisible, toggle } = useAccordion();
+  const { isOn: isVisible, toggle } = useToggle();
 
   return (
     <Card {...props}>
