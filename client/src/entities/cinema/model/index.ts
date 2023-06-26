@@ -1,3 +1,10 @@
 import { Api } from '@/shared/services/api';
 
-export const getCinemas = () => Api.getCinemas();
+let cachedPromise: ReturnType<typeof Api.getCinemas>;
+export const getCinemas = () => {
+  if (!cachedPromise) {
+    cachedPromise = Api.getCinemas();
+  }
+
+  return cachedPromise;
+};
