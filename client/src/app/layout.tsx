@@ -4,6 +4,7 @@ import { Roboto } from 'next/font/google';
 import clsx from 'clsx';
 import { Header } from '@/widgets/header';
 import { Footer } from '@/widgets/footer';
+import { APP_DESCRIPTION, APP_TITLE } from '@/shared/config';
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -11,8 +12,8 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: 'Билетопоиск',
-  description: 'Поиск дешевых кинобилетов',
+  title: APP_TITLE,
+  description: APP_DESCRIPTION,
 };
 
 export default function RootLayout({
