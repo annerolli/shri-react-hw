@@ -1,4 +1,9 @@
-import { Api, GetMoviesParams, MovieGenre } from '@/shared/services/api';
+import {
+  Api,
+  GetMovieParams,
+  GetMoviesParams,
+  MovieGenre,
+} from '@/shared/services/api';
 
 export const genreList = Object.values(MovieGenre);
 
@@ -11,6 +16,8 @@ export const getMovies = (params?: GetMoviesParams) => {
 
   return cache[key];
 };
+
+export const getMovie = (params: GetMovieParams) => Api.getMovie(params);
 
 export const getLangGenre = (gener: MovieGenre) => {
   switch (gener) {
