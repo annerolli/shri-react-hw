@@ -2,7 +2,15 @@ import { Api, GetMoviesParams, MovieGenre } from '@/shared/services/api';
 
 export const genreList = Object.values(MovieGenre);
 
-export const getMovies = (params?: GetMoviesParams) => Api.getMovies(params);
+let cache: Record<string, ReturnType<typeof Api.getMovies>> = {};
+export const getMovies = (params?: GetMoviesParams) => {
+  const key = JSON.stringify(params) || 'empty';
+  if (!cache[key]) {
+    cache[key] = Api.getMovies(params);
+  }
+
+  return cache[key];
+};
 
 export const getLangGenre = (gener: MovieGenre) => {
   switch (gener) {
