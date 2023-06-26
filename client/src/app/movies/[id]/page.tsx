@@ -1,6 +1,7 @@
 import { MovieRichCard } from '@/entities/movie/ui/movie-rich-card';
 import { ReviewList } from '@/entities/review/ui/review-list';
 import { APP_TITLE } from '@/shared/config';
+import { createPageTitle } from '@/shared/lib/app';
 import { Api } from '@/shared/services/api';
 import { FC } from 'react';
 
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: Props) {
   const data = await Api.getMovie({ movieId: params.id });
 
   return {
-    title: `${data.title} | ${APP_TITLE}`,
+    title: createPageTitle(data.title),
     description: data.description,
   };
 }

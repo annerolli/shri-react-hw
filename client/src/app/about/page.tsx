@@ -2,11 +2,14 @@ import { Card } from '@/shared/ui/card';
 import s from './page.module.css';
 import { Paragraph, Title } from '@/shared/ui/typography';
 import { FC } from 'react';
+import { createPageTitle } from '@/shared/lib/app';
+
+const PAGE_TITLE = 'О нас';
 
 const AboutPage: FC = () => {
   return (
     <Card>
-      <Title weight={600}>О нас</Title>
+      <Title weight={600}>{PAGE_TITLE}</Title>
       <Paragraph className={s.page_paragrph}>
         Мы — крупнейший сервис о кино в рунете. На нем вы сможете посмотреть
         фильмы и сериалы, купить билеты в кино, узнать рейтинги популярных видео
@@ -29,6 +32,10 @@ const AboutPage: FC = () => {
       </Paragraph>
     </Card>
   );
+};
+
+export const metadata = {
+  title: createPageTitle(PAGE_TITLE),
 };
 
 export default AboutPage;
