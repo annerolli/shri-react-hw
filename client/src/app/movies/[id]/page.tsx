@@ -1,5 +1,6 @@
 import { MovieRichCard } from '@/entities/movie/ui/movie-rich-card';
 import { ReviewList } from '@/entities/review/ui/review-list';
+import { AddMovieTicketToCart } from '@/features/add-movie-ticket-to-cart';
 import { APP_TITLE } from '@/shared/config';
 import { createPageTitle } from '@/shared/lib/app';
 import { Api } from '@/shared/services/api';
@@ -19,7 +20,10 @@ const MoviePage: FC<Props> = async ({ params }) => {
 
   return (
     <>
-      <MovieRichCard data={movie} />
+      <MovieRichCard
+        data={movie}
+        after={<AddMovieTicketToCart movie={movie} />}
+      />
       <ReviewList data={reviews} />
     </>
   );
