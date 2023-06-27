@@ -36,3 +36,9 @@
 .root-active .icon {
   transform: rotate(180deg);
 }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,25 +1,36 @@
 import s from './input.module.css';
-import { FC } from 'react';
+import { FC, MouseEvent } from 'react';
 import { Footnote } from '@/shared/ui/typography';
 import clsx from 'clsx';
-import { IconDropDown } from '@/shared/icons';
+import { IconClose, IconDropDown } from '@/shared/icons';
+import { SelectOption } from './types';
+import { IconButton } from '../icon-button';
 
 interface Props {
   isActive: boolean;
   placeholder?: string;
-  title?: string | null;
+  value?: SelectOption | null;
   onToggle: VoidFunction;
+  onReset: VoidFunction;
   disabled?: boolean;
 }
 
 export const Input: FC<Props> = ({
   isActive,
   placeholder = 'Выберите элемент',
-  title = null,
+  value = null,
   onToggle,
+  onReset,
   disabled,
 }) => {
-  const hasTitle = title !== null;
+  const hasValue = value !== null;
+
+  const handleResetClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    onReset();
+  };
 
   return (
     <button
@@ -27,16 +38,24 @@ export const Input: FC<Props> = ({
       className={clsx(
         s.root,
         isActive && s['root-active'],
-        hasTitle && s['root-selected']
+        hasValue && s['root-selected']
       )}
       onClick={onToggle}
       disabled={disabled}
     >
       <Footnote as="span" className={s.content}>
-        {hasTitle ? title : placeholder}
+        {hasValue ? value.title : placeholder}
       </Footnote>
 
-      <IconDropDown width={20} height={20} className={s.icon} />
+      <span className={s.actions}>
+        {hasValue && (
+          <IconButton aria-label="Сбросить выбор" onClick={handleResetClick}>
+            <IconClose />
+          </IconButton>
+        )}
+
+        <IconDropDown width={20} height={20} className={s.icon} />
+      </span>
     </button>
   );
 };

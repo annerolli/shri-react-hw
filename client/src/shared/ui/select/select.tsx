@@ -44,13 +44,20 @@ export const Select: FC<Props> = ({
     onChange?.({ value });
   };
 
+  const reset = () => {
+    setSelectedValue(null);
+
+    onChange?.({ value: null });
+  };
+
   return (
     <div {...props} className={s.select}>
       <Input
-        title={selectItem?.title}
+        value={selectItem}
         placeholder={placeholder}
         isActive={isOn}
         onToggle={toggle}
+        onReset={reset}
         disabled={!hasData}
       />
 
