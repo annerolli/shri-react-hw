@@ -1,0 +1,13 @@
+.button {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #F50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: #FFA375
+}
