@@ -1,0 +1,8 @@
+.counter {
+  border-radius: 8px;
+  min-width: 28px;
+  text-align: center;
+  padding: 4px;
+  background-color: #F50;
+  color: #FFF;
+}
