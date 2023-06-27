@@ -2,7 +2,7 @@ import s from './movie-card.module.css';
 import { Movie } from '@/shared/services/api';
 import { Card } from '@/shared/ui/card';
 import { Paragraph, Subhead } from '@/shared/ui/typography';
-import { FC, ReactNode } from 'react';
+import { FC, MouseEvent, ReactNode } from 'react';
 import { getLangGenre } from '../../model';
 import { MoviePoster } from '../movie-poster';
 import clsx from 'clsx';
@@ -15,6 +15,8 @@ interface Props {
 }
 
 export const MovieCard: FC<Props> = ({ data, className, after }) => {
+  const preventAfterClick = (e: MouseEvent) => e.preventDefault();
+
   return (
     <Card className={clsx(className, s.card)}>
       <div className={s.card_before}>
@@ -28,7 +30,11 @@ export const MovieCard: FC<Props> = ({ data, className, after }) => {
           {getLangGenre(data.genre)}
         </Paragraph>
       </div>
-      {Boolean(after) && <div className={s.card_after}>{after}</div>}
+      {Boolean(after) && (
+        <div className={s.card_after} onClick={preventAfterClick}>
+          {after}
+        </div>
+      )}
     </Card>
   );
 };
