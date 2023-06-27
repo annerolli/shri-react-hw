@@ -2,3 +2,7 @@
   display: flex;
   gap: 24px;
 }
+
+.layout:first-child {
+  flex-basis: 414px;
+}
